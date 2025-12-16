@@ -13,7 +13,7 @@ if "GEMINI_API_KEY" not in st.secrets:
 # Configurar el modelo (Usando 1.5-Flash para máxima estabilidad)
 try:
     genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel(model_name='gemini-1.5-flash')
 except Exception as e:
     st.error(f"Error al configurar la IA: {e}")
 
