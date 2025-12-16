@@ -14,7 +14,7 @@ if "GEMINI_API_KEY" not in st.secrets:
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 # Probamos con el nombre corto del modelo que suele evitar el error 404
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('models/gemini-1.5-flash-latest')
 
 texto = st.text_area("Pega aquí el texto del alumno:")
 
