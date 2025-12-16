@@ -83,7 +83,7 @@ if st.button("🚀 Generar Retroalimentación Pedagógica"):
     with st.spinner('Tu tutor experto está analizando el texto...'):
         try:
             response = client.models.generate_content(
-                model='gemini-1.5-pro', # Fast & Smart
+                model='gemini-1.5-flash', # Fast & Smart
                 contents=PROMPT_USUARIO,
                 config=types.GenerateContentConfig(
                     system_instruction=SYSTEM_INSTRUCTION
@@ -97,3 +97,4 @@ if st.button("🚀 Generar Retroalimentación Pedagógica"):
         except Exception as e:
 
             st.error(f"Error al generar feedback: {e}")
+
