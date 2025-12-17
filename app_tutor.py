@@ -13,7 +13,7 @@ os.environ["GOOGLE_GENAI_USE_V1BETA"] = "0"
 if "GEMINI_API_KEY" in st.secrets:
     genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
     # Usamos el nombre completo del modelo
-    model = genai.GenerativeModel('models/gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     
     texto = st.text_area("Escribe aquí el texto en inglés:", placeholder="Ej: I is a professional...")
     
