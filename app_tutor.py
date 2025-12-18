@@ -18,7 +18,7 @@ if "GEMINI_API_KEY" in st.secrets:
                 with st.spinner("La IA está analizando tu texto..."):
                     # USAMOS GEMINI 2.0 FLASH (El modelo más nuevo y estable)
                     response = client.models.generate_content(
-                        model="gemini-2.0-flash", 
+                        model="gemini-1.5-flash", 
                         contents=f"Actúa como profesor de inglés técnico. Corrige este texto y explica en español: {texto}"
                     )
                     st.success("### Resultado:")
