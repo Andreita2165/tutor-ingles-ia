@@ -16,7 +16,7 @@ if "GEMINI_API_KEY" in st.secrets:
         if st.button("Analizar"):
             if texto:
                 with st.spinner("La IA está analizando tu texto..."):
-                    # USAMOS GEMINI 2.0 FLASH (El modelo más nuevo y estable)
+                    # Usamos 1.5-flash que es muy estable
                     response = client.models.generate_content(
                         model="gemini-1.5-flash", 
                         contents=f"Actúa como profesor de inglés técnico. Corrige este texto y explica en español: {texto}"
@@ -27,7 +27,6 @@ if "GEMINI_API_KEY" in st.secrets:
                 st.warning("Por favor, escribe algo.")
                 
     except Exception as e:
-        # Si sale error 429, es por cuota. Si sale 404, es por el nombre del modelo.
         st.error(f"Error técnico: {e}")
 else:
-    st.error("⚠️ Configura la GEMINI_API_KEY en los Secrets de Streamlit."
+    st.error("⚠️ Configura la GEMINI_API_KEY en los Secrets de Streamlit.")
