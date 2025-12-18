@@ -11,13 +11,13 @@ if api_key:
 
     if st.button("Analizar"):
         if user_input:
-            with st.spinner("Consultando al profesor..."):
-                # NUEVA URL: Más simple para evitar el error 404
-                url = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={api_key}"
+            with st.spinner("Conectando con el servidor estable..."):
+                # URL PARA GEMINI-PRO (El modelo más compatible)
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}"
                 
                 payload = {
                     "contents": [{
-                        "parts": [{"text": f"Eres un profesor de inglés. Corrige esto y explica en español: {user_input}"}]
+                        "parts": [{"text": f"Corrige este inglés y explica en español: {user_input}"}]
                     }]
                 }
                 
@@ -30,7 +30,6 @@ if api_key:
                         st.success("### Resultado:")
                         st.write(resultado)
                     else:
-                        # Si vuelve a fallar, nos dirá exactamente por qué
                         error_msg = data.get('error', {}).get('message', 'Error desconocido')
                         st.error(f"Error de Google: {error_msg}")
                 except Exception as e:
